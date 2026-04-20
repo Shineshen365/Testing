@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElectroShop Pro</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}
+body{background:#f3f5f9;color:#222}
+.container{width:92%;max-width:1200px;margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+header h1{color:#0d6efd;font-weight:700}
+nav a{margin:0 12px;text-decoration:none;color:#444;font-weight:500}
+nav a:hover{color:#0d6efd}
+ /* background: url('imagestv-banner.png.png') center/cover no-repeat; */
+
+/* SLIDING HERO */
+/* ===== FULL HERO BACKGROUND ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f3f5f9;
+}
+
+/* HERO */
+.hero-banner{
+  position: relative;
+  width: 100%;
+  height: 90vh;
+   background: url('imagestv-banner.png.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Zoom animation */
+  animation: zoomBg 20s ease-in-out infinite;
+}
+
+/* ZOOM EFFECT */
+@keyframes zoomBg {
+  0% { background-size: 100%; }
+  50% { background-size: 110%; }
+  100% { background-size: 100%; }
+}
+
+/* OVERLAY */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* TEXT */
+.hero-text{
+  position: relative;
+  color:#fff;
+  text-align:center;
+  max-width:600px;
+  padding:20px;
+
+  /* Float in + loop */
+  animation: floatUp 1.2s ease, floatLoop 4s ease-in-out infinite;
+}
+
+/* FLOAT IN */
+@keyframes floatUp {
+  0%{
+    opacity:0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100%{
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* FLOAT LOOP */
+@keyframes floatLoop {
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+.hero-text h1{
+  font-size:48px;
+  margin-bottom:15px;
+}
+
+.hero-text p{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.btn{
+  background:#0d6efd;
+  color:#fff;
+  padding:12px 25px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn:hover{
+  background:#0b5ed7;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-banner{ height:70vh; }
+
+  .hero-text h1{ font-size:28px; }
+  .hero-text p{ font-size:14px; }
+}
+
+@media(max-width:480px){
+  .hero-banner{ height:60vh; }
+  .hero-text h1{ font-size:22px; }
+}
+
+.reviews-section {
+  margin: 60px 0;
+}
+
+/* SLIDER */
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* CARD */
+.review-card {
+  flex: 0 0 25%;
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* AVATAR */
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #0d6efd;
+  transition: 0.3s;
+}
+
+.review-card:hover .avatar {
+  transform: scale(1.1);
+}
+
+/* TEXT */
+.review-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.review-card h6 {
+  color: #0d6efd;
+  margin: 5px 0;
+}
+
+.stars {
+  color: #ffc107;
+}
+
+/* DOTS */
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots .active {
+  background: #0d6efd;
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px){
+  .review-card { flex: 0 0 50%; }
+}
+
+@media(max-width: 576px){
+  .review-card { flex: 0 0 100%; }
+}
+
+.card-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+/* ===== DEAL OF THE DAY ===== */
+.deal-section{
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.deal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.countdown{
+  background:#000;
+  color:#fff;
+  padding:8px 15px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.deal-card{
+  position:relative;
+  background:#f9fbff;
+  padding: 15px;
+  border-radius:12px;
+  text-align:center;
+  transition:.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.deal-card:hover{
+  transform:translateY(-5px);
+}
+
+.deal-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.deal-card .badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:red;
+  color:#fff;
+  padding:5px 8px;
+  font-size:12px;
+  border-radius:5px;
+}
+.deal-card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.price{
+  color:#0d6efd;
+  font-weight:bold;
+}
+
+.price span{
+  text-decoration:line-through;
+  color:#999;
+}
+
+.progress{
+  height:8px;
+  margin-top:10px;
+}
+
+@media(max-width:768px){
+  .deal-header{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+  }
+  .banner{
+  background: url('images/appliances.jpg') center/cover no-repeat;
+  height: 300px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* smooth animation */
+  transition: all 0.4s ease;
+
+  /* premium shadow */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* DARK OVERLAY (SAFE VERSION) */
+.banner::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* KEEP CONTENT ABOVE */
+.banner-content{
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔥 POP EFFECT */
+.banner:hover{
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+/* ===== PREMIUM DEAL HEADER ===== */
+.deal-premium{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.deal-premium h2{
+  font-size:28px;
+  font-weight:700;
+}
+
+.deal-premium p{
+  color:#666;
+  margin:10px 0 20px;
+}
+
+.deal-timer{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.deal-timer div{
+  background:#000;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:12px;
+  min-width:70px;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.deal-timer span{
+  display:block;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.deal-timer small{
+  font-size:12px;
+  color:#aaa;
+}
+
+@media(max-width:576px){
+  .deal-timer div{
+    padding:12px;
+    min-width:60px;
+  }
+
+  .deal-timer span{
+    font-size:18px;
+  }
+}
+}
+.deal-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px; /* 🔥 tighter spacing */
+}
+/* ===== CLICK POP FOR DEAL SECTION ===== */
+.deals-click{
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.deals-click.active{
+  transform: scale(1.03);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+}
+
+@media(max-width:992px){
+  .deal-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:576px){
+  .deal-grid{grid-template-columns:1fr;}
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:all .6s ease;
+}
+.deal-timer{
+  display:flex !important;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.deal-timer div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:#000;
+  color:#fff;
+  padding:15px;
+  border-radius:12px;
+  min-width:70px;
+}
+
+.deal-timer span{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.deal-timer small{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* ===== QUANTITY BUTTONS (PREMIUM ROUND STYLE) ===== */
+.qty-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-top:12px;
+}
+
+/* COMMON BUTTON STYLE */
+.qty-box button{
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .25s ease;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+/* MINUS BUTTON (YELLOW) */
+.qty-box button:first-child{
+  background:#ffc107;
+  color:#222;
+}
+
+/* PLUS BUTTON (GREEN) */
+.qty-box button:last-child{
+  background:#28a745;
+  color:#fff;
+}
+
+/* HOVER EFFECT */
+.qty-box button:hover{
+  transform:scale(1.15);
+  box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
+
+/* CLICK EFFECT */
+.qty-box button:active{
+  transform:scale(0.9);
+}
+
+/* NUMBER STYLE */
+.qty-box span{
+  font-size:16px;
+  font-weight:600;
+  min-width:25px;
+  text-align:center;
+}
+/* =========================
+   BANNER FULL BACKGROUND
+========================= */
+.banner{
+  background: url('images/appliances.jpg') center/cover no-repeat;
+  height: 300px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* smooth animation */
+  transition: all 0.4s ease;
+
+  /* premium shadow */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* DARK OVERLAY (SAFE VERSION) */
+.banner::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* KEEP CONTENT ABOVE */
+.banner-content{
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔥 POP EFFECT */
+.banner:hover{
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+
+/* CONTENT ABOVE BACKGROUND */
+.banner-content{
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+
+/* TEXT STYLING */
+.banner h3{
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner p{
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.banner .btn{
+  background: #0d6efd;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.banner .btn:hover{
+  background: #0b5ed7;
+}
+
+/* FLOAT-IN ANIMATION */
+@keyframes floatIn {
+  0%{
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* HOVER FLOAT EFFECT */
+.banner:hover{
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px){
+  .banner{
+    height: 220px;
+    padding: 20px;
+    gap: 10px;
+  }
+}
+  .banner h3{
+    font-size: 20px;
+  }
+
+  .banner p{
+    font-size: 13px;
+  }
+
+  .banner .btn{
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+
+@media (max-width: 480px){
+  .banner{
+    height: 200px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .banner-content{
+    max-width: 100%;
+  }
+}
+/* ===== PREMIUM PRODUCT CARD INTERACTIONS ===== */
+
+.product-card{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* HOVER LIFT */
+.product-card:hover{
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* CLICK POP */
+.product-card.active{
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+}
+
+/* BUTTON STYLE */
+.qty button{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+/* GREEN PLUS */
+.qty button:first-child{
+  background: #28a745;
+  color: #fff;
+}
+
+/* YELLOW MINUS */
+.qty button:last-child{
+  background: #ffc107;
+  color: #000;
+}
+
+/* BUTTON CLICK ANIMATION */
+.qty button:active{
+  transform: scale(1.2);
+}
+
+/* RIPPLE EFFECT */
+.ripple{
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect{
+  to{
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+.product-card.active{
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25),
+              0 0 20px rgba(13,110,253,0.4);
+}
+/* ACTION AREA */
+.card-actions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.card-actions{
+  display: flex;
+  justify-content: center; /* center the +/- */
+  align-items: center;
+  margin-top: 10px;
+}
+/* QUANTITY CONTROL */
+.qty-control{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* BUTTON STYLE */
+.qty-control button{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* YELLOW (-) */
+.qty-control button:first-child{
+  background: #ffc107;
+  color: #000;
+}
+
+/* GREEN (+) */
+.qty-control button:last-child{
+  background: #28a745;
+  color: #fff;
+}
+
+/* HOVER */
+.qty-control button:hover{
+  transform: scale(1.15);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* CLICK */
+.qty-control button:active{
+  transform: scale(0.9);
+}
+
+/* QTY TEXT */
+.qty-value{
+  font-weight: 600;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* PUSH BUTTONS DOWN */
+.card-actions{
+  margin-top: auto;
+}
+/* ===============================
+   TAKE THE BEST CHOICE SECTION
+================================= */
+
+.products.best-choice{
+  margin:60px 0;
+}
+
+.products.best-choice h3{
+  text-align:center;
+  font-size:24px;
+  margin-bottom:30px;
+}
+
+/* GRID */
+.products.best-choice .grid{
+  position:relative;
+  overflow:hidden;
+}
+
+.best-track{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+}
+
+.best-track::-webkit-scrollbar{
+  display:none;
+}
+
+.best-track .card{
+  min-width:220px;
+  max-width:220px;
+  flex-shrink:0;
+}
+/* CARD */
+.products.best-choice .card{
+  background:#fff;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  transition:0.3s;
+  position:relative;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+
+  /* ADD THESE 👇 */
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100%;
+}
+
+.products.best-choice .card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.products.best-choice .img-box{
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.products.best-choice .img-box img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  transition:0.3s;
+}
+
+.products.best-choice .card:hover img{
+  transform:scale(1.05);
+}
+
+/* TITLE */
+.products.best-choice h4{
+  font-size:15px;
+  margin:10px 0;
+}
+
+/* PRICE */
+.products.best-choice .price{
+  color:#0d6efd;
+  font-weight:700;
+}
+
+/* RATING */
+.products.best-choice .rating{
+  color:#ffc107;
+  font-size:13px;
+  margin:5px 0;
+}
+
+
+/* ===============================
+   + / - BUTTONS
+================================= */
+
+.products.best-choice .qty-box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:12px;
+}
+
+.products.best-choice .qty-box button{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:none;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+/* MINUS (YELLOW) */
+.products.best-choice .qty-box button:first-child{
+  background:#ffc107;
+  color:#000;
+}
+
+.products.best-choice .qty-box button:first-child:hover{
+  transform:scale(1.1);
+}
+
+/* PLUS (GREEN) */
+.products.best-choice .qty-box button:last-child{
+  background:#28a745;
+  color:#fff;
+}
+
+.products.best-choice .qty-box button:last-child:hover{
+  transform:scale(1.1);
+}
+
+/* NUMBER */
+.products.best-choice .qty-box span{
+  font-weight:600;
+  font-size:14px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media(max-width:768px){
+  .products.best-choice h3{
+    font-size:20px;
+  }
+
+  .products.best-choice .grid{
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media(max-width:480px){
+  .products.best-choice .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .products.best-choice .img-box img{
+    height:130px;
+  }
+}
+.slider-track{
+  display:flex;
+  gap:20px;
+  width:max-content;
+  
+}
+/* ===== NAV BUTTONS ===== */
+.products.best-choice .grid{
+  position:relative;
+  overflow:hidden;
+}
+/* UNIVERSAL IMAGE BOX */
+.img-box{
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.img-box img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  display:block;
+}
+
+/* HOVER ADD TO CART (GLOBAL) */
+.hover-cart{
+  position:absolute;
+  bottom:-60px;
+  left:0;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  transition:0.3s;
+}
+.card:hover .hover-cart,
+.product-card:hover .hover-cart,
+.deal-card:hover .hover-cart{
+  bottom:10px;
+}
+
+.card,
+.product-card,
+.deal-card{
+  position: relative;
+}
+/* BUTTON STYLE */
+.hover-cart .btn{
+  background:#000;
+  color:#fff;
+  border:none;
+  padding:7px 15px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#000;
+  color:#fff;
+  border:none;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:10;
+  opacity:0.7;
+}
+
+.nav:hover{
+  opacity:1;
+}
+.prev{ left:5px; }
+.next{ right:5px; }
+
+/* ===== SMOOTH SLIDE FIX ===== */
+.slider-track{
+  display:flex;
+  gap:20px;
+  width:max-content;
+  scroll-behavior:smooth;
+}
+
+/* STOP AUTO ON HOVER */
+.slider-track:hover{
+  animation-play-state:paused;
+}
+
+.slider-track{
+  cursor:grab;
+}
+
+.slider-track:active{
+  cursor:grabbing;
+}
+
+@media(max-width:768px){
+  .nav{
+    display:none;
+  }
+}
+
+@keyframes autoSlide{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+.slider-wrapper{
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px; /* 👈 THIS creates space for arrows */
+}
+
+.btn{background:#0d6efd;color:#fff;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;font-weight:600}
+.btn:hover{background:#0b5ed7}
+
+.features{display:flex;justify-content:space-between;flex-wrap:wrap;margin:40px 0;text-align:center;background:#fff;padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,.05)}
+.feature{flex:1;min-width:200px;padding:10px}
+.feature i{font-size:22px;margin-bottom:8px;color:#0d6efd}
+.feature p{font-size:14px;color:#555}
+
+.products{margin:50px 0}
+.products h3{margin-bottom:20px;font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:15px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.05);transition:.3s;position:relative}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:160px;object-fit:contain}
+.card h4{font-size:15px;margin:10px 0}
+.price{color:#0d6efd;font-weight:700}
+.old{color:#999;text-decoration:line-through;font-size:13px;margin-left:6px}
+.rating{color:#ffc107;font-size:13px;margin:5px 0}
+.badge{position:absolute;top:10px;left:10px;background:#ff3d3d;color:#fff;font-size:11px;padding:3px 6px;border-radius:4px}
+
+.footer{background:#111;color:#eee;padding:40px 0;margin-top:50px}
+.footer .cols{display:flex;flex-wrap:wrap;gap:25px}
+.footer .col{flex:1;min-width:200px}
+.footer h4{margin-bottom:10px}
+.footer a{color:#bbb;text-decoration:none;display:block;margin:6px 0;font-size:14px}
+.footer a:hover{color:#fff}
+.payments i{margin-right:10px;font-size:26px}
+
+@media(max-width:768px){.hero{flex-direction:column;text-align:center}.banner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>ElectroShop</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Products</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero-banner">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1>Upgrade Your Lifestyle</h1>
+    <p>Discover premium electronics at unbeatable prices.</p>
+    <button class="btn">Shop Now</button>
+  </div>
+</section>
+
+<section class="reviews-section container my-5">
+  <h3 class="text-center mb-4">What Our Customers Say</h3>
+
+  <div class="slider-wrapper">
+
+    <!-- LEFT ARROW -->
+    <button class="nav prev">&#10094;</button>
+
+    <!-- SLIDER -->
+    <div class="reviews-slider">
+      <div class="reviews-track" id="track">
+
+        <!-- REVIEW 1 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" class="avatar">
+          <p>"Amazing quality! The TV exceeded my expectations."</p>
+          <h6>Ifeoma</h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- REVIEW 2 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/2.jpg" class="avatar">
+          <p>"Fast delivery and great customer service."</p>
+          <h6>Emmanuel </h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- REVIEW 3 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/3.jpg" class="avatar">
+          <p>"Very affordable prices and original products."</p>
+          <h6>Michael </h6>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <!-- REVIEW 4 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/4.jpg" class="avatar">
+          <p>"I love the design and ease of shopping here."</p>
+          <h6>Dayo</h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- REVIEW 5 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/5.jpg" class="avatar">
+          <p>"Highly recommend! Smooth checkout process."</p>
+          <h6>David </h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- REVIEW 6 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/6.jpg" class="avatar">
+          <p>"Customer support was very helpful."</p>
+          <h6>Oluwashina</h6>
+          <div class="stars">★★★★☆</div>
+        </div>
+
+        <!-- REVIEW 7 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/men/7.jpg" class="avatar">
+          <p>"Great experience, will shop again!"</p>
+          <h6>Victor</h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <!-- REVIEW 8 -->
+        <div class="review-card">
+          <img src="https://randomuser.me/api/portraits/women/8.jpg" class="avatar">
+          <p>"Products arrived exactly as described."</p>
+          <h6>Damilola</h6>
+          <div class="stars">★★★★★</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT ARROW -->
+    <button class="nav next">&#10095;</button>
+
+  </div>
+
+  <!-- DOTS -->
+  <div class="dots" id="dots"></div>
+
+</section>
+<section class="products">
+<h3>Best Selling Products</h3>
+
+<div class="grid" id="productGrid"></div>
+
+ <script>
+  const products = [
+ {
+   name:"iPhone 12 Pro Max",
+   price:499,
+  img:"images/iphone.jpg",
+  desc:"A powerful smartphone designed for speed, performance, and stunning visuals.",
+  longDesc:"The iPhone 12 Pro Max delivers top-tier performance with Apple’s A14 Bionic chip, advanced camera system, and premium design built for professionals and everyday users.",
+  brand:"Apple",
+  warranty:"1 Year Apple Warranty",
+  rating:"4.8",
+  features:["6.7-inch Super Retina XDR Display","128GB Storage","Fast Charging","Triple Camera System","Face ID Security"],
+  specs:["A14 Bionic Chip","5G Enabled","OLED Display","MagSafe Support"]
+},
+
+{
+  name:"Microwave Oven",
+  price:199,
+  img:"images/microwave.jpg",
+  desc:"Cook faster and smarter with this modern microwave oven.",
+  longDesc:"A powerful kitchen microwave designed for fast heating, defrosting, and cooking with multiple smart modes for everyday meals.",
+  brand:"Panasonic",
+  warranty:"2 Years Warranty",
+  rating:"4.5",
+  features:["Quick heating","Energy efficient","Large capacity","Digital control panel"],
+  specs:["800W Power","20L Capacity","Auto Cook Menu","Child Lock"]
+},
+
+{
+  name:"Headphones",
+  price:99,
+  img:"images/headphones.jpg",
+  desc:"Enjoy immersive sound with noise-cancelling headphones.",
+  longDesc:"High-quality wireless headphones built for deep bass, clear vocals, and long-lasting comfort for music lovers and professionals.",
+  brand:"Level",
+  warranty:"1 Year Warranty",
+  rating:"4.6",
+  features:["Noise cancellation","Bluetooth 5.0","Long battery","Comfortable fit"],
+  specs:["40mm Drivers","20h Battery Life","Built-in Mic","Fast Charge"]
+},
+
+{
+  name:"Bluetooth Speaker",
+  price:149,
+  img:"images/Bluetoothspk.jpg",
+  desc:"Portable speaker with deep bass and clear sound.",
+  longDesc:"A compact yet powerful Bluetooth speaker designed for parties, travel, and outdoor use with rich bass and clear sound output.",
+  brand:"Boombest",
+  warranty:"1 Year Warranty",
+  rating:"4.7",
+  features:["Water resistant","10-hour battery","Strong bass","Wireless"],
+  specs:["IPX7 Waterproof","Bluetooth 5.1","12W Output","Rechargeable Battery"]
+},
+
+{
+  name:"WiFi Router",
+  price:89,
+  img:"images/Wifirouter.jpg",
+  desc:"High-speed router for stable internet.",
+  longDesc:"Reliable dual-band WiFi router built for fast internet speeds, stable connection, and wide coverage for homes and offices.",
+  brand:"Globacom",
+  warranty:"1 Year Warranty",
+  rating:"4.4",
+  features:["Dual-band","Wide coverage","Secure","Easy setup"],
+  specs:["2.4GHz & 5GHz","300Mbps Speed","4 LAN Ports","Parental Control"]
+},
+
+{
+  name:"Blender",
+  price:120,
+  img:"images/Kenturkey.jpg",
+  desc:"Durable blender for smoothies and food processing.",
+  longDesc:"A powerful kitchen blender designed for smoothies, soups, and food processing with strong stainless steel blades.",
+  brand:"Kenturkey",
+  warranty:"1 Year Warranty",
+  rating:"4.5",
+  features:["High-speed motor","Strong blades","Easy cleaning","Multi-use"],
+  specs:["600W Motor","Stainless Steel Blades","1.5L Jar","Pulse Function"]
+},
+
+{
+  name:"Laptop Pro",
+  price:899,
+  img:"images/laptop.jpg",
+  desc:"High-performance laptop for work and gaming.",
+  longDesc:"A premium laptop built for professionals, gamers, and creators with high-speed performance and long battery life.",
+  brand:"Hp",
+  warranty:"1 Year Warranty",
+  rating:"4.8",
+  features:["16GB RAM","512GB SSD","Full HD Display","Long battery"],
+  specs:["Intel i7 Processor","NVIDIA GPU","15.6-inch Screen","Backlit Keyboard"]
+},
+
+{
+  name:"Camera",
+  price:499,
+  img:"images/camera.jpg",
+  desc:"Capture stunning photos and videos.",
+  longDesc:"A professional-grade camera designed for photography and videography with sharp image quality and advanced stabilization.",
+  brand:"Canon",
+  warranty:"1 Year Warranty",
+  rating:"4.7",
+  features:["24MP","4K video","Stabilization","Compact"],
+  specs:["APS-C Sensor","DIGIC Processor","WiFi Enabled","Interchangeable Lens"]
+},
+
+{
+  name:"Power Bank",
+  price:39,
+  img:"images/powerbank.jpg",
+  desc:"Portable charger for your devices.",
+  longDesc:"Compact power bank designed for fast charging smartphones and devices on the go.",
+  brand:"Anker",
+  warranty:"6 Months Warranty",
+  rating:"4.3",
+  features:["10000mAh","Fast charging","Lightweight","Dual ports"],
+  specs:["USB-C Input","LED Indicator","Overcharge Protection","Lithium Battery"]
+},
+
+{
+  name:"Tripod Stand",
+  price:59,
+  img:"images/Tripodstd.jpg",
+  desc:"Stable tripod for photography and videos.",
+  longDesc:"Lightweight and adjustable tripod stand ideal for photography, vlogging, and video recording.",
+  brand:"K&F Concept",
+  warranty:"1 Year Warranty",
+  rating:"4.4",
+  features:["Adjustable","Strong grip","Lightweight","Portable"],
+  specs:["Aluminium Build","Max Height 1.5m","360° Rotation","Phone Mount"]
+}
+];
+
+const grid = document.getElementById("productGrid");
+
+products.forEach(p => {
+  grid.innerHTML += `
+    <a href="./product.html?data=${encodeURIComponent(JSON.stringify(p))}" class="card-link">
+      
+      <div class="card">
+        <div class="img-box">
+          <img src="${p.img}">
+          
+          <div class="hover-cart">
+            <button class="btn">Add to Cart</button>
+          </div>
+        </div>
+
+        <h4>${p.name}</h4>
+        <p class="price">$${p.price}</p>
+
+        <!-- ✅ QTY CONTROL BACK -->
+        <div class="card-actions">
+          <div class="qty-control">
+            <button onclick="event.preventDefault(); changeQty(this,-1)">−</button>
+            <span class="qty-value">1</span>
+            <button onclick="event.preventDefault(); changeQty(this,1)">+</button>
+          </div>
+        </div>
+
+      </div>
+
+    </a>
+  `;
+});
+
+
+/* ✅ QTY FUNCTION */
+function changeQty(btn, change){
+  let qty = btn.parentElement.querySelector(".qty-value");
+  let value = parseInt(qty.innerText);
+
+  value += change;
+  if(value < 1) value = 1;
+
+  qty.innerText = value;
+}
+</script>
+</section>
+<section class="banner">
+  <div class="banner-content">
+    <h3>Choose Kitchen Appliances</h3>
+    <p>From our huge collections of premium electronics and home devices.</p>
+ <a href="kitchen.html" class="btn">Explore Now</a>
+<div id="kitchen-page" style="display:none; padding:40px;">
+ <h1>Kitchen Appliances</h1>
+  <p>
+    Welcome to our kitchen appliances section. Here you will find high-quality tools
+    to make cooking easier, faster, and more enjoyable.
+  </p>
+
+  <h3>Available Products</h3>
+  <ul>
+    <li>Blenders</li>
+    <li>Microwave Ovens</li>
+    <li>Electric Kettles</li>
+    <li>Food Processors</li>
+  </ul>
+
+  <h3>Why Choose Our Appliances?</h3>
+  <ul>
+    <li>Durable and long-lasting</li>
+    <li>Affordable pricing</li>
+    <li>Modern and stylish designs</li>
+  </ul>
+
+  <button onclick="goHome()">⬅ Back</button>
+
+</div>
+  </div>
+</section>
+<section class="products best-choice">
+
+<h3>Take the Best Choice</h3>
+
+<div class="grid">
+<button class="nav best-prev">&#10094;</button>
+<button class="nav best-next">&#10095;</button>
+
+<div class="best-track" id="bestChoiceTrack"></div>
+</div>
+</section>
+
+<script>
+const bestChoice = [
+{
+  name:"Camera",
+  price:499,
+  img:"https://images.unsplash.com/photo-1519183071298-a2962eadc87b?q=80&w=400",
+  desc:"Capture stunning photos",
+  longDesc:"Professional camera designed for high-quality photography and 4K video recording.",
+  brand:"Canon",
+  warranty:"1 Year Warranty",
+  rating:"5",
+  features:["24MP","4K Video","Stabilization","Compact"],
+  specs:["APS-C Sensor","WiFi","Lens Support","DIGIC Processor"]
+},
+
+{
+  name:"Tripod Stand",
+  price:59,
+  img:"https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?q=80&w=400",
+  desc:"Stable tripod for videos",
+  longDesc:"Lightweight tripod ideal for photography, content creation and vlogging.",
+  brand:"K&F",
+  warranty:"1 Year",
+  rating:"4",
+  features:["Adjustable","Portable","Strong grip","Lightweight"],
+  specs:["360° Rotation","Aluminium","1.5m Height"]
+},
+
+{
+  name:"Portable Speaker",
+  price:89,
+  img:"https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=400",
+  desc:"Loud and clear sound",
+  longDesc:"Compact Bluetooth speaker with deep bass and long battery life.",
+  brand:"JBL",
+  warranty:"1 Year",
+  rating:"5",
+  features:["Bluetooth","Bass Boost","10h Battery","Waterproof"],
+  specs:["Bluetooth 5.0","12W Output","Rechargeable"]
+},
+
+{
+  name:"Power Bank",
+  price:39,
+  img:"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?q=80&w=400",
+  desc:"Charge anywhere",
+  longDesc:"Portable charger with fast charging and long-lasting battery.",
+  brand:"Anker",
+  warranty:"6 Months",
+  rating:"4",
+  features:["10000mAh","Fast charge","Dual port","Lightweight"],
+  specs:["USB-C","LED Indicator","Safe charging"]
+},
+
+{
+  name:"Laptop",
+  price:899,
+  img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400",
+  desc:"High performance laptop",
+  longDesc:"Powerful laptop built for work, gaming, and productivity.",
+  brand:"Dell",
+  warranty:"1 Year",
+  rating:"5",
+  features:["16GB RAM","512GB SSD","Full HD","Long battery"],
+  specs:["Intel i7","15.6-inch","Backlit keyboard"]
+},
+
+{
+  name:"WiFi Router",
+  price:89,
+  img:"https://images.unsplash.com/photo-1606904825846-647eb07f5be2?q=80&w=400",
+  desc:"Fast internet connection",
+  longDesc:"Dual-band router for stable and high-speed internet.",
+  brand:"TP-Link",
+  warranty:"1 Year",
+  rating:"4",
+  features:["Dual-band","Wide coverage","Secure","Easy setup"],
+  specs:["300Mbps","4 Ports","Parental Control"]
+},
+
+{
+  name:"Blender",
+  price:120,
+  img:"https://images.unsplash.com/photo-1585238342028-78d387f4a707?q=80&w=400",
+  desc:"Kitchen essential",
+  longDesc:"Durable blender for smoothies and food processing.",
+  brand:"NutriBullet",
+  warranty:"1 Year",
+  rating:"4",
+  features:["High speed","Strong blades","Easy clean","Multi-use"],
+  specs:["600W Motor","1.5L Jar","Steel Blade"]
+},
+
+{
+  name:"Headphones",
+  price:99,
+  img:"https://images.unsplash.com/photo-1518449034895-3c0b1a5b61d0?q=80&w=400",
+  desc:"Immersive sound",
+  longDesc:"Noise-cancelling headphones with long battery life.",
+  brand:"Sony",
+  warranty:"1 Year",
+  rating:"5",
+  features:["Noise cancelling","Bluetooth","Comfortable","Long battery"],
+  specs:["20h Battery","Built-in Mic","Fast Charge"]
+}
+];
+
+const track = document.getElementById("bestChoiceTrack");
+
+/* 🔥 DUPLICATE FOR AUTO SLIDE */
+const fullList = [...bestChoice, ...bestChoice];
+
+fullList.forEach(p => {
+  track.innerHTML += `
+
+  <a href="./product.html?data=${encodeURIComponent(JSON.stringify(p))}" class="card-link">
+
+    <div class="card">
+
+      <div class="img-box">
+        <img src="${p.img}">
+        <div class="hover-cart">
+          <button class="btn" onclick="event.preventDefault()">Add to Cart</button>
+        </div>
+      </div>
+
+      <h4>${p.name}</h4>
+
+      <div class="rating">
+        ${"★".repeat(Math.round(p.rating))}${"☆".repeat(5 - Math.round(p.rating))}
+      </div>
+
+      <p class="price">$${p.price}</p>
+
+      <div class="qty-box">
+        <button onclick="event.preventDefault(); changeQty(this,-1)">−</button>
+        <span>1</span>
+        <button onclick="event.preventDefault(); changeQty(this,1)">+</button>
+      </div>
+
+    </div>
+
+  </a>
+  `;
+});
+
+</script>
+
+<!-- ================= DEAL OF THE DAY ================= -->
+<section class="deal-section deals-click container my-5">
+<div class="deal-premium">
+
+  <div class="deal-timer">
+    <div><span id="days">00</span><small>Days</small></div>
+    <div><span id="hours">00</span><small>Hours</small></div>
+    <div><span id="minutes">00</span><small>Minutes</small></div>
+    <div><span id="seconds">00</span><small>Seconds</small></div>
+  </div>
+</div>
+
+<div id="mainPage">
+<h2>🔥 Deal of the Day</h2>
+<p>Limited time offers. Grab them before they’re gone!</p>
+<div class="deal-grid" id="dealGrid"></div>
+
+<script>
+const deals = [
+{
+  name:"Smartphone X",
+  price:499,
+  oldPrice:620,
+  img:"images/phone.jpg",
+  desc:"A powerful smartphone with premium design.",
+  longDesc:"Smartphone X delivers fast performance, stunning display, and advanced camera features for everyday use.",
+  brand:"Samsung",
+  warranty:"1 Year Warranty",
+  rating:"4.7",
+  features:["6.5-inch Display","128GB Storage","Fast Charging","Triple Camera"],
+  specs:["Octa-core CPU","5G Support","OLED Screen","Face Unlock"]
+},
+
+{
+  name:"Headphones",
+  price:99,
+  oldPrice:140,
+  img:"images/headphones.jpg",
+  desc:"Immersive sound experience.",
+  longDesc:"Enjoy music with deep bass and noise cancellation for clear listening.",
+  brand:"Sony",
+  warranty:"1 Year Warranty",
+  rating:"4.6",
+  features:["Noise cancelling","Bluetooth","Long battery","Comfort fit"],
+  specs:["20h Battery","Built-in Mic","Fast Charge","Wireless"]
+},
+
+{
+  name:"Bluetooth Speaker",
+  price:149,
+  oldPrice:199,
+  img:"images/speaker.jpg",
+  desc:"Portable speaker with strong bass.",
+  longDesc:"Compact speaker designed for travel, parties, and outdoor use.",
+  brand:"JBL",
+  warranty:"1 Year Warranty",
+  rating:"4.7",
+  features:["Water resistant","10h battery","Strong bass","Wireless"],
+  specs:["Bluetooth 5.0","12W Output","Rechargeable","IPX7"]
+},
+
+{
+  name:"WiFi Router",
+  price:89,
+  oldPrice:120,
+  img:"images/router.jpg",
+  desc:"Stable high-speed internet.",
+  longDesc:"Dual-band router built for strong connectivity and wide coverage.",
+  brand:"TP-Link",
+  warranty:"1 Year Warranty",
+  rating:"4.4",
+  features:["Dual-band","Wide range","Secure","Easy setup"],
+  specs:["300Mbps","4 Ports","Parental Control","Signal Boost"]
+},
+
+{
+  name:"Blender",
+  price:120,
+  oldPrice:160,
+  img:"images/blender.jpg",
+  desc:"Perfect for smoothies.",
+  longDesc:"High-speed blender for kitchen use with durable blades.",
+  brand:"NutriBullet",
+  warranty:"1 Year Warranty",
+  rating:"4.5",
+  features:["High speed","Strong blades","Easy clean","Multi-use"],
+  specs:["600W Motor","1.5L Jar","Pulse Mode","Steel Blade"]
+},
+
+{
+  name:"Laptop Pro",
+  price:899,
+  oldPrice:1050,
+  img:"images/laptop.jpg",
+  desc:"Powerful laptop for work & gaming.",
+  longDesc:"High-performance laptop with fast processor and long battery life.",
+  brand:"Dell",
+  warranty:"1 Year Warranty",
+  rating:"4.8",
+  features:["16GB RAM","512GB SSD","Full HD","Long battery"],
+  specs:["Intel i7","15.6-inch","Backlit keyboard","GPU"]
+},
+
+{
+  name:"Tripod Stand",
+  price:59,
+  oldPrice:79,
+  img:"images/tripod.jpg",
+  desc:"Stable tripod for videos.",
+  longDesc:"Lightweight tripod for photography and content creation.",
+  brand:"K&F",
+  warranty:"1 Year Warranty",
+  rating:"4.4",
+  features:["Adjustable","Portable","Strong grip","Lightweight"],
+  specs:["360° Rotation","Aluminium","1.5m Height","Phone mount"]
+},
+
+{
+  name:"Camera",
+  price:499,
+  oldPrice:650,
+  img:"images/camera.jpg",
+  desc:"Capture high-quality images.",
+  longDesc:"Professional camera with 4K video and stabilization.",
+  brand:"Canon",
+  warranty:"1 Year Warranty",
+  rating:"4.7",
+  features:["24MP","4K","Stabilization","Compact"],
+  specs:["APS-C","WiFi","Lens support","DIGIC"]
+},
+
+{
+  name:"Power Bank",
+  price:39,
+  oldPrice:59,
+  img:"images/powerbank.jpg",
+  desc:"Charge anywhere anytime.",
+  longDesc:"Portable power bank with fast charging and long battery life.",
+  brand:"Anker",
+  warranty:"6 Months Warranty",
+  rating:"4.3",
+  features:["10000mAh","Fast charge","Dual port","Lightweight"],
+  specs:["USB-C","LED indicator","Safe charging","Compact"]
+}
+];
+
+const dealGrid = document.getElementById("dealGrid");
+
+deals.forEach(p => {
+  dealGrid.innerHTML += `
+  
+  <a href="./product.html?data=${encodeURIComponent(JSON.stringify(p))}" class="card-link">
+
+    <div class="deal-card product-card fade-in">
+
+      <div class="img-box">
+        <img src="${p.img}">
+        <div class="hover-cart">
+          <button class="btn" onclick="event.preventDefault()">Add to Cart</button>
+        </div>
+      </div>
+
+      <h6>${p.name}</h6>
+
+      <p class="price">
+        $${p.price} <span>$${p.oldPrice}</span>
+      </p>
+
+      <div class="card-actions">
+        <div class="qty-control">
+          <button onclick="event.preventDefault(); changeQty(this,-1)">−</button>
+          <span class="qty-value">1</span>
+          <button onclick="event.preventDefault(); changeQty(this,1)">+</button>
+        </div>
+      </div>
+
+    </div>
+
+  </a>
+  `;
+});
+
+
+</script>
+
+</div>
+
+</div>
+</div>
+<footer class="footer">
+<div class="container">
+<div class="cols">
+<div class="col">
+<h4>About Us</h4>
+<p>We provide top quality electronics with trusted service and fast delivery across the country.</p>
+</div>
+<div class="col">
+<h4>Quick Links</h4>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Contact</a>
+</div>
+<div class="col">
+<h4>Join Us</h4>
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
+</div>
+<div class="col payments">
+<h4>Payment Options</h4>
+<i class="fa-brands fa-cc-visa"></i>
+<i class="fa-brands fa-cc-mastercard"></i>
+<i class="fa-solid fa-money-bill"></i>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+const dealSection = document.querySelector('.deals-click');
+
+dealSection.addEventListener('click', (e) => {
+
+  // 🚫 IGNORE clicks on buttons (IMPORTANT)
+  if(e.target.tagName === "BUTTON") return;
+
+  dealSection.classList.add('active');
+
+  setTimeout(() => {
+    dealSection.classList.remove('active');
+  }, 300);
+});
+</script>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+let endTime = new Date().getTime() + (3*24*60*60*1000); // 3 days deal
+
+function updateCountdown(){
+  let now = new Date().getTime();
+  let distance = endTime - now;
+
+  let days = Math.floor(distance / (1000*60*60*24));
+  let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  let seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("days").innerHTML = String(days).padStart(2,'0');
+  document.getElementById("hours").innerHTML = String(hours).padStart(2,'0');
+  document.getElementById("minutes").innerHTML = String(minutes).padStart(2,'0');
+  document.getElementById("seconds").innerHTML = String(seconds).padStart(2,'0');
+
+  if(distance < 0){
+    document.querySelector(".deal-timer").innerHTML = "EXPIRED";
+  }
+}
+
+setInterval(updateCountdown,1000);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const track = document.getElementById("track");
+  const cards = document.querySelectorAll(".review-card");
+  const reviewsSection = document.querySelector(".reviews-section");
+  const dotsContainer = document.getElementById("dots");
+
+  if(!track || !cards.length || !reviewsSection || !dotsContainer) return;
+
+  const nextBtn = reviewsSection.querySelector(".next");
+  const prevBtn = reviewsSection.querySelector(".prev");
+
+  if(!nextBtn || !prevBtn) return;
+
+  let index = 0;
+  let visibleCards = getVisibleCards();
+
+  function getVisibleCards(){
+    if(window.innerWidth < 576) return 1;
+    if(window.innerWidth < 992) return 2;
+    return 4;
+  }
+
+  function createDots(){
+    dotsContainer.innerHTML = "";
+    let total = Math.ceil(cards.length / visibleCards);
+
+    for(let i=0;i<total;i++){
+      let dot = document.createElement("span");
+      dot.onclick = ()=>goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+    updateDots();
+  }
+
+  function updateDots(){
+    [...dotsContainer.children].forEach(d=>d.classList.remove("active"));
+    if(dotsContainer.children[index]){
+      dotsContainer.children[index].classList.add("active");
+    }
+  }
+
+  function updateSlide(){
+    let style = window.getComputedStyle(cards[0]);
+    let margin = parseInt(style.marginLeft) + parseInt(style.marginRight);
+    let cardWidth = cards[0].offsetWidth + margin;
+    track.style.transform = `translateX(-${index * cardWidth * visibleCards}px)`;
+    updateDots();
+  }
+
+  nextBtn.onclick = ()=>{
+    index = (index + 1) % Math.ceil(cards.length / visibleCards);
+    updateSlide();
+  };
+
+  prevBtn.onclick = ()=>{
+    index = (index - 1 + Math.ceil(cards.length / visibleCards)) % Math.ceil(cards.length / visibleCards);
+    updateSlide();
+  };
+
+  function goToSlide(i){
+    index = i;
+    updateSlide();
+  }
+
+  let autoSlide = setInterval(()=>{
+    nextBtn.click();
+  }, 4000);
+
+  track.addEventListener("mouseenter", ()=>clearInterval(autoSlide));
+  track.addEventListener("mouseleave", ()=>{
+    autoSlide = setInterval(()=>nextBtn.click(), 4000);
+  });
+
+  window.addEventListener("resize", ()=>{
+    visibleCards = getVisibleCards();
+    createDots();
+    updateSlide();
+  });
+
+  createDots();
+  updateSlide();
+
+});
+</script>
+
+<script>
+const fadeCards = document.querySelectorAll('.fade-in');
+
+function revealCards(){
+  const trigger = window.innerHeight * 0.9;
+
+  fadeCards.forEach(card=>{
+    const top = card.getBoundingClientRect().top;
+    if(top < trigger){
+      card.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealCards);
+</script>
+<script>
+function changeQty(button, change){
+  let qtyElement = button.parentElement.querySelector("span");
+  let current = parseInt(qtyElement.innerText);
+
+  current += change;
+  if(current < 1) current = 1;
+
+  qtyElement.innerText = current;
+}
+</script>
+
+
+<script>
+// ===== CARD CLICK POP =====
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', function(e){
+
+    // POP EFFECT
+    card.classList.add('active');
+    setTimeout(()=> card.classList.remove('active'), 200);
+
+    // RIPPLE EFFECT
+    let ripple = document.createElement("span");
+    ripple.classList.add("ripple");
+
+    let rect = card.getBoundingClientRect();
+    ripple.style.left = (e.clientX - rect.left) + "px";
+    ripple.style.top = (e.clientY - rect.top) + "px";
+
+    card.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+</script>
+<script>
+function openKitchenPage(){
+  document.getElementById("home-page").style.display = "none";
+  document.getElementById("kitchen-page").style.display = "block";
+}
+
+function goHome(){
+  document.getElementById("home-page").style.display = "block";
+  document.getElementById("kitchen-page").style.display = "none";
+}
+</script>
+<script>
+document.querySelectorAll('.card button').forEach(btn => {
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const track = document.querySelector(".best-track");
+  const next = document.querySelector(".best-next");
+  const prev = document.querySelector(".best-prev");
+
+  if(!track || !next || !prev) return;
+
+  function getScrollAmount(){
+    if(window.innerWidth < 600) return 220;
+    if(window.innerWidth < 1024) return 260;
+    return 300;
+  }
+
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+});
+</script>
